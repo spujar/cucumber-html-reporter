@@ -53,6 +53,12 @@
                <%= step.text %>
              </div>
         <% } %>
+        <% if (step.doc_string) { %>
+             <a href="#info<%= featureIndex %>_<%= scenarioIndex %><%= stepIndex %>" data-toggle="collapse">+ Show Info</a>
+             <div id="info<%= featureIndex %>_<%= scenarioIndex %><%= stepIndex %>" class="collapse">
+               <%= step.doc_string.value %>
+             </div>
+        <% } %>
 
 		 <% if (step.image) { %>
                  <a class="toggle" href="#">Screenshot -</a>
@@ -75,4 +81,4 @@
     <hr />
   </div>
 </div>
-<% }); %> 
+<% }); %>
