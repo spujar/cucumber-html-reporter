@@ -108,7 +108,37 @@
 
                             <% } %>
                           <% } %>
+
+
+                                <% if(step.rows) { %>
+                                <div class="scrollBar">
+                                 <table class="arguments">
+                                     <% var rows = step.rows; %>
+                                       <tr>
+                                       <% var cells = rows[0]["cells"]; %>
+                                       <% for( var k = 0; k < cells.length; k++ ) { %>
+                                         <td>
+                                           <%= cells[k] %>
+                                         </td>
+                                          <% } %>
+                                         </tr>
+                                     <% for( var j = 1; j < rows.length; j++ ) { %>
+                                       <tr>
+                                       <% var cells = rows[j]["cells"]; %>
+                                       <% for( var k = 0; k < cells.length; k++ ) { %>
+                                         <td>
+                                           <%= cells[k] %>
+                                         </td>
+                                       <% } %>
+                                       </tr>
+                                     <% } %>
+                               </table>
+                              </div>
+                               <% } %>
+
                       </span>
+
+
                     <% if(step.result) { %>
                       <% if(step.result.status === 'undefined') { %>
                         <pre class=info>
